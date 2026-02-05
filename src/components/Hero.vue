@@ -26,7 +26,7 @@
 
         <!-- Badge / Label -->
         <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur text-xs tracking-wider uppercase text-yellow-300">
-          ⚖ Prosperity Law Firm
+          <ScaleIcon class="w-4 h-4"/> Prosperity Law Firm
         </div>
 
         <!-- Headline -->
@@ -50,7 +50,7 @@
             class="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-yellow-400 text-slate-900 font-semibold text-sm shadow-lg hover:bg-yellow-300 transition duration-300"
           >
             Jadwalkan Konsultasi
-            <span class="group-hover:translate-x-1 transition">→</span>
+            <ArrowRightIcon class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"/>
           </a>
 
           <a
@@ -63,10 +63,27 @@
         </div>
 
       </div>
-
+    </div>
+    <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
+        <svg class="w-full h-20" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path 
+            fill="url(#gradientWave)" 
+            d="M0,64L48,96C96,128,192,192,288,213.3C384,235,480,213,576,186.7C672,160,768,128,864,128C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+        <defs>
+            <linearGradient id="gradientWave" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(248,250,252,0)" />
+            <stop offset="100%" stop-color="rgba(248,250,252,1)" />
+            </linearGradient>
+        </defs>
+        </svg>
     </div>
   </section>
 </template>
+
+<script setup>
+    import { ScaleIcon, ArrowRightIcon } from '@heroicons/vue/24/solid'
+</script>
 
 <style scoped>
 /* Simple fade-in animation for hero content */
