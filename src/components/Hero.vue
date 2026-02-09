@@ -1,104 +1,200 @@
 <template>
-  <section
-    id="hero"
-    class="relative min-h-[80vh] flex items-center text-white overflow-hidden"
-  >
+  <section class="hero" ref="heroRef" id="hero">
 
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <img
-        src="/images/office-building.jpg"
-        alt="Prosperity Law Firm Office"
-        class="w-full h-full object-cover scale-105"
-      />
-      <!-- Dark cinematic gradient -->
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/80 to-slate-900/60"></div>
-    </div>
+    <!-- background -->
+    <img src="/images/office-building.jpg" class="hero-bg" />
 
-    <!-- Glow accents -->
-    <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 -right-32 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl"></div>
+    <!-- left panel -->
+    <div class="hero-left"></div>
 
-    <!-- Content -->
-    <div class="relative max-w-screen-2xl mx-auto px-6 md:px-10 lg:px-16 pt-32 pb-24">
+    <!-- accent line -->
+    <div class="accent-line"></div>
 
-      <div class="max-w-4xl animate-fade">
+    <!-- content -->
+    <div class="hero-content">
+      <div class="inner">
 
-        <!-- Badge / Label -->
-        <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur text-xs tracking-wider uppercase text-yellow-300">
-          <ScaleIcon class="w-4 h-4"/> Prosperity Law Firm
-        </div>
-
-        <!-- Headline -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
-          Mitra Hukum Tepercaya<br class="hidden md:block" />
-          <span class="text-yellow-300">untuk Bisnis & Individu</span>
+        <h1 class="brand">
+          <span class="brand-top">PROSPERITY</span>
+          <span class="brand-bottom">LAW FIRM</span>
         </h1>
 
-        <!-- Description -->
-        <p class="text-lg text-slate-200/90 mb-10 leading-relaxed">
-          Memberikan solusi hukum strategis dan profesional dengan spesialisasi di hukum korporasi,
-          kepailitan, dan litigasi. Didukung tim advokat berpengalaman yang siap mendampingi setiap
-          langkah hukum Anda.
+        <p class="tagline">
+          Mitra Hukum Tepercaya<br>
+          untuk Bisnis & Individu
         </p>
-
-        <!-- Buttons -->
-        <div class="flex flex-wrap gap-5">
-
-          <a
-            href="#contact"
-            class="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-yellow-400 text-slate-900 font-semibold text-sm shadow-lg hover:bg-yellow-300 transition duration-300"
-          >
-            Jadwalkan Konsultasi
-            <ArrowRightIcon class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"/>
-          </a>
-
-          <a
-            href="#services"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/40 text-sm font-medium hover:bg-white/10 backdrop-blur transition duration-300"
-          >
-            Lihat Layanan
-          </a>
-
-        </div>
 
       </div>
     </div>
-    <div class="absolute bottom-0 w-full overflow-hidden leading-[0]">
-        <svg class="w-full h-20" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path 
-            fill="url(#gradientWave)" 
-            d="M0,64L48,96C96,128,192,192,288,213.3C384,235,480,213,576,186.7C672,160,768,128,864,128C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-        </path>
-        <defs>
-            <linearGradient id="gradientWave" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="rgba(248,250,252,0)" />
-            <stop offset="100%" stop-color="rgba(248,250,252,1)" />
-            </linearGradient>
-        </defs>
-        </svg>
-    </div>
+
   </section>
 </template>
 
 <script setup>
-    import { ScaleIcon, ArrowRightIcon } from '@heroicons/vue/24/solid'
+  import { ref, onMounted, onUnmounted } from 'vue'
+
+  const heroRef = ref(null)
+
+  const handleScroll = () => {
+    if (!heroRef.value) return
+    const y = window.scrollY
+    heroRef.value.style.setProperty('--parallax-y', y * 0.20 + 'px')
+  }
+
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+  })
 </script>
 
 <style scoped>
-/* Simple fade-in animation for hero content */
-.animate-fade {
-  animation: fadeUp 0.9s ease-out both;
-}
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+    color: white;
+    scroll-margin-top: 95px;
+  }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    transform: translateY(calc(var(--parallax-y, 0px) * -1));
+    transition: transform 0.12s linear;
+    filter: brightness(0.75);
+    z-index: 0;
+    will-change: transform;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .hero-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(56, 73, 114, 0.88),
+      rgba(55, 71, 117, 0.65)
+    );
+    z-index: 1;
   }
-}
+
+  .accent-line {
+    position: absolute;
+    top: 0;
+    left: 48%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #d4af379d, #f6d46586);
+    z-index: 2;
+    animation: glowLine 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowLine {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.4); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .inner {
+    padding: 70px;
+    max-width: 640px;
+    animation: heroReveal 1s ease-out both;
+  }
+
+  /* ========= BRAND TITLE ========= */
+  .brand {
+    margin-bottom: 26px;
+    line-height: 1.05;
+  }
+
+  .brand-top {
+    display: block;
+    font-size: 58px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  }
+
+  .brand-bottom {
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #d4af37;
+    margin-top: 6px;
+  }
+
+  /* ========= TAGLINE ========= */
+  .tagline {
+    font-size: 20px;
+    opacity: 0.92;
+    color: #dbeafe;
+  }
+
+  /* ========= REVEAL ANIMATION ========= */
+  @keyframes heroReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* ========= RESPONSIVE ========= */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 65vh;
+    }
+
+    .hero-content {
+      min-height: 65vh;
+    }
+
+    .hero-bg {
+      height: 130%;
+    }
+
+    .hero-left {
+      width: 100%;
+    }
+
+    .accent-line {
+      display: none;
+    }
+
+    .inner {
+      padding: 40px;
+    }
+
+    .brand-top {
+      font-size: 42px;
+    }
+
+    .brand-bottom {
+      font-size: 22px;
+      letter-spacing: 4px;
+    }
+
+    .tagline {
+      font-size: 16px;
+    }
+  }
 </style>
