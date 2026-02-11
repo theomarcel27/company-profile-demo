@@ -2,7 +2,7 @@
   <section class="hero" ref="heroRef" id="hero">
 
     <!-- background -->
-    <img src="/images/office-building.jpg" class="hero-bg" />
+    <img src="/images/gambarGedung2.jpg" class="hero-bg" />
 
     <!-- left panel -->
     <div class="hero-left"></div>
@@ -23,6 +23,11 @@
           Mitra Hukum Tepercaya<br>
           untuk Bisnis & Individu
         </p>
+
+        <div class="cta-group">
+          <a href="#contact" class="btn-primary">Consult Now</a>
+          <a href="#about" class="btn-outline">Learn More</a>
+        </div>
 
       </div>
     </div>
@@ -145,6 +150,48 @@
     opacity: 0.92;
     color: #dbeafe;
   }
+
+  .cta-group {
+    margin-top: 34px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #d4af37, #f6d465);
+    color: #1e293b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    filter: brightness(1.05);
+  }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+  }
+
 
   /* ========= REVEAL ANIMATION ========= */
   @keyframes heroReveal {

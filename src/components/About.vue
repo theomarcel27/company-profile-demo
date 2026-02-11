@@ -79,6 +79,16 @@
 
       </div>
     </div>
+    <div class="about-divider">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path
+          d="M0,64 C320,120 720,0 1440,64 L1440,120 L0,120 Z"
+          fill="#0f172a"
+          fill-opacity="1"
+        />
+      </svg>
+    </div>
+
   </section>
 </template>
 
@@ -88,11 +98,30 @@
 </script>
 
 <style scoped>
+  .about-divider {
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .about-divider svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   .about-section {
     position: relative;
-    padding: 100px 0;
+    padding: 70px 0;
     background: linear-gradient(to bottom, #f8fafc, #eef2f7);
     overflow: hidden;
+    scroll-margin-top: 68px;
   }
 
   /* accent line atas */
@@ -122,7 +151,7 @@
     flex-shrink: 0;
     transition: transform .25s ease, box-shadow .25s ease;
   }
-  
+
   .icon svg {
     animation: iconIn .6s ease both;
   }
@@ -159,7 +188,7 @@
   }
 
   .about-label {
-    font-size: 12px;
+    font-size: 15px;
     letter-spacing: .25em;
     font-weight: 700;
     color: #d4af37;
@@ -168,7 +197,7 @@
   }
 
   .about-title {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 700;
     color: #0f172a;
     line-height: 1.3;
@@ -177,6 +206,7 @@
   .about-desc {
     color: #475569;
     line-height: 1.7;
+    font-size: 18px;
   }
 
   /* ===== grid ===== */
@@ -227,14 +257,14 @@
   }
 
   .about-card h3 {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 6px;
     color: #0f172a;
   }
 
   .about-card p {
-    font-size: 13px;
+    font-size: 15px;
     color: #64748b;
     line-height: 1.6;
   }
