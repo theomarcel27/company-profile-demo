@@ -242,7 +242,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, transparent, rgba(212,175,55,.15));
+    background: linear-gradient(120deg, transparent, rgba(247, 228, 167, 0.4)); 
     opacity: 0;
     transition: .35s;
   }
