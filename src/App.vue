@@ -4,6 +4,7 @@
   import About from './components/About.vue'
   import Services from './components/Services.vue'
   import Teams from './components/Teams.vue'
+  import Contact from './components/Contact.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@
   <About />
   <Services />
   <Teams />
+  <Contact />
 </template>
 
 <style scoped></style>

@@ -292,6 +292,12 @@ onMounted(() => {
   text-align:center;
 }
 
+.info h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;   /* jarak ke bio */
+    line-height: 1.35;
+  }
+
 .role {
   font-size:11px;
   letter-spacing:.2em;
@@ -329,6 +335,26 @@ onMounted(() => {
   .member.from-right,
   .member.from-bottom {
     transform: translateY(40px);
+  }
+
+  .info {
+    padding: 22px 18px 24px;
+  }
+
+  .info .role {
+    display: inline-block;
+    margin-bottom: 12px;   /* jarak ke nama */
+  }
+
+  .info h3 {
+    margin-top: 6px;
+    margin-bottom: 12px;   /* jarak ke bio */
+    line-height: 1.35;
+  }
+
+  .info .bio {
+    margin-top: 8px;
+    line-height: 1.7;
   }
 
 }

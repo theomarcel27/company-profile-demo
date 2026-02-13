@@ -85,8 +85,8 @@
     height: 100%;
     background: linear-gradient(
       135deg,
-      rgba(56, 73, 114, 0.88),
-      rgba(55, 71, 117, 0.65)
+    #16213ecb 55%,
+    #1e2f55c5 100%
     );
     z-index: 1;
   }
