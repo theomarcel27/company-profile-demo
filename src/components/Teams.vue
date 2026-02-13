@@ -12,9 +12,9 @@
       </p>
     </div>
 
-    <!-- ===== MANAGING PARTNER SPOTLIGHT ===== -->
-    <div class="mp-card" :class="show ? 'show' : ''">
-      <div class="mp-photo-wrap">
+    <!-- ===== MANAGING PARTNER ===== -->
+    <div class="mp-card" :class="{ show }">
+      <div>
         <img :src="managing.photo"
              :style="{ objectPosition: managing.pos }"
              class="mp-photo">
@@ -35,9 +35,7 @@
         v-for="(m,i) in others"
         :key="m.name"
         :class="[
-          i === 0 ? 'from-left' :
-          i === 1 ? 'from-bottom' :
-          'from-right',
+          dirClass(i),
           show ? 'show' : ''
         ]"
       >
@@ -67,28 +65,28 @@ const members = [
     name: "Calvin Pratama, S.H., M.Kn.",
     photo: "images/teams/cowo1.jpg",
     pos: "center 30%",
-    bio: "Calvin Pratama, S.H., M.Kn. adalah Managing Partner Prosperity Law Firm dengan fokus utama pada hukum korporasi dan perdata. Lulusan Sarjana Hukum dan Magister Kenotariatan Universitas Airlangga ini dikenal memiliki fondasi akademik kuat yang berpadu dengan pengalaman praktis tingkat tinggi.Sebelum mendirikan firma, ia memegang posisi strategis sebagai Head of Legal & Corporate Secretary di beberapa grup perusahaan nasional besar, menangani strategi hukum korporasi, kepatuhan regulasi, manajemen risiko, dan tata kelola perusahaan. Dengan pendekatan yang presisi, strategis, dan berorientasi solusi, Calvin memimpin firma untuk memberikan layanan hukum yang bernilai tambah, terpercaya, dan berkelanjutan bagi setiap klien."
+    bio: "Managing Partner dengan fokus hukum korporasi dan perdata. Memiliki latar belakang Sarjana Hukum dan Magister Kenotariatan serta pengalaman strategis sebagai Head of Legal & Corporate Secretary di grup perusahaan nasional. Berpengalaman dalam strategi hukum korporasi, kepatuhan regulasi, manajemen risiko, dan tata kelola perusahaan."
   },
   {
     role: "Senior Partner",
     name: "Theodora Rotua Batubara, S.H., S.E., M.Si",
     photo: "images/teams/cowo2.jpg",
     pos: "center 5%",
-    bio: "Theodora Rotua Batubara adalah profesional multidisipliner di bidang hukum, akuntansi, dan perpajakan dengan pengalaman lebih dari 15 tahun. Berpengalaman menangani pemeriksaan, keberatan, dan sengketa pajak hingga tingkat banding. Pemegang sertifikasi Kuasa Hukum Pajak & Konsultan Pajak IKPI, advokat (PERADIc, AAI, IKADIN), serta tersertifikasi sebagai Mediator, Likuidator, Auditor, dan Kurator."
+    bio: "Profesional multidisipliner di bidang hukum, akuntansi, dan perpajakan dengan pengalaman lebih dari 15 tahun. Menangani pemeriksaan hingga sengketa pajak tingkat banding. Pemegang sertifikasi Kuasa Hukum Pajak, Konsultan Pajak, Advokat, Mediator, Likuidator, Auditor, dan Kurator."
   },
   {
     role: "Junior Associate",
     name: "Najla Fernanda Rizanty, S.H.",
     photo: "images/teams/cewe1.jpg",
     pos: "center 40%",
-    bio: "Najla Fernanda Rizanty adalah lulusan Sarjana Hukum Universitas Brawijaya (2023), telah menyelesaikan PKPA dan UPA, serta bersertifikasi Certified Contract Drafter (BNSP). Berpengalaman dalam penanganan perkara litigasi dan non-litigasi serta pendampingan hukum korporasi. Fokus pada Corporate Law dan Manpower Law, dengan keahlian drafting dan review kontrak, perjanjian komersial, serta dokumen hukum perusahaan."
+    bio: "Lulusan Sarjana Hukum, telah menyelesaikan PKPA dan UPA serta bersertifikasi Certified Contract Drafter (BNSP). Berpengalaman di litigasi dan non-litigasi, pendampingan korporasi, drafting dan review kontrak serta dokumen hukum perusahaan."
   },
   {
     role: "Junior Associate",
     name: "Adrian Ramdani Pardomuan, S.H.",
     photo: "images/teams/cowo3.jpg",
     pos: "center 5%",
-    bio: "Adrian Ramdani Pardomuan adalah lulusan Sarjana Hukum Universitas Jenderal Soedirman dengan pengalaman menangani perkara pidana, perdata, dan korporasi. Terlibat dalam konsultasi, pendampingan, serta perumusan strategi hukum untuk klien individu dan perusahaan. Aktif di bidang non-litigasi, termasuk pendirian PT, perizinan usaha, serta pendaftaran merek dan hak kekayaan intelektual. Dikenal dengan pendekatan analitis dan solusi hukum yang praktis serta berorientasi hasil."
+    bio: "Konsultan hukum dengan pengalaman perkara pidana, perdata, dan korporasi. Aktif di bidang non-litigasi termasuk pendirian PT, perizinan usaha, dan HKI. Dikenal dengan pendekatan analitis dan solusi hukum yang praktis serta berorientasi hasil."
   }
 ]
 
@@ -98,10 +96,19 @@ const others = computed(() => members.slice(1))
 const teamRef = ref(null)
 const show = ref(false)
 
+const dirClass = (i) => {
+  if (i === 0) return "from-left"
+  if (i === 1) return "from-bottom"
+  return "from-right"
+}
+
 onMounted(() => {
   const obs = new IntersectionObserver(
     ([e]) => { if (e.isIntersecting) show.value = true },
-    { threshold: 0.3 }
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -10% 0px"
+    }
   )
   obs.observe(teamRef.value)
 })
@@ -117,8 +124,6 @@ onMounted(() => {
     radial-gradient(circle at 80% 90%, rgba(212,175,55,.06), transparent 45%),
     linear-gradient(to bottom,#f8fafc,#eef2f7,#e7ecf3);
 }
-
-/* subtle pattern */
 
 .team::after {
   content:"";
@@ -139,7 +144,7 @@ onMounted(() => {
   z-index: 2;
 }
 
-/* ===== HEAD ===== */
+/* HEAD */
 
 .head {
   text-align: center;
@@ -168,10 +173,9 @@ onMounted(() => {
   line-height:1.7;
 }
 
-/* ================= MP CARD ================= */
+/* MP CARD */
 
 .mp-card {
-  position: relative;
   display:grid;
   grid-template-columns: 420px 1fr;
   gap: 42px;
@@ -183,7 +187,7 @@ onMounted(() => {
   margin-bottom:60px;
 
   opacity:0;
-  transform:translateY(70px) scale(.97);
+  transform:translateY(60px) scale(.97);
   transition:.9s cubic-bezier(.2,.8,.2,1);
   overflow:hidden;
 }
@@ -206,53 +210,40 @@ onMounted(() => {
   height:400px;
   object-fit:cover;
   border-radius:18px;
-  background:#e5e7eb;
-  transition: transform .6s ease;
 }
 
 .mp-info h3 {
   font-size:26px;
   margin:10px 0 16px;
-  color:#0f172a;
 }
 
 .mp-bio {
-  color:#475569;
   line-height:1.85;
   font-size:15px;
   text-align:justify;
+  color:#475569;
 }
 
-/* ================= GRID ================= */
+/* GRID */
 
 .grid {
-  max-width: 1100px;      /* samakan rasa lebarnya */
-  margin: 0 auto;
+  width: 100%;
   display:grid;
   gap:26px;
-  grid-template-columns: 1fr;   /* mobile dulu */
+  grid-template-columns: 1fr;
 }
-
-/* tablet */
 
 @media (min-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .grid { grid-template-columns: 1fr 1fr; }
 }
-
-/* desktop */
 
 @media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3,1fr);
-  }
+  .grid { grid-template-columns: repeat(3,1fr); }
 }
 
-/* ================= MEMBER ================= */
+/* MEMBER CARD */
 
 .member {
-  position: relative;
   background:white;
   border-radius:18px;
   overflow:hidden;
@@ -263,27 +254,11 @@ onMounted(() => {
   filter: blur(6px);
 }
 
-/* subtle gold corner glow */
-.member::before {
-  content:"";
-  position:absolute;
-  inset:-1px;
-  background: linear-gradient(120deg, transparent, rgba(212,175,55,.25));
-  opacity:0;
-  transition:.4s;
-}
+/* entrance */
 
-.member:hover {
-  transform: translateY(-10px) scale(1.015);
-  box-shadow:0 36px 100px rgba(15,23,42,.18);
-}
-
-
-/* entrance directions */
-
-.member.from-left { transform: translateX(-90px); }
-.member.from-right { transform: translateX(90px); }
-.member.from-bottom { transform: translateY(90px); }
+.member.from-left { transform: translateX(-80px); }
+.member.from-right { transform: translateX(80px); }
+.member.from-bottom { transform: translateY(80px); }
 
 .member.show {
   opacity:1;
@@ -297,6 +272,12 @@ onMounted(() => {
 .member.show:nth-child(2){ transition-delay:.30s }
 .member.show:nth-child(3){ transition-delay:.45s }
 
+/* hover */
+
+.member:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:0 36px 100px rgba(15,23,42,.18);
+}
 
 /* content */
 
@@ -304,8 +285,6 @@ onMounted(() => {
   width:100%;
   height:250px;
   object-fit:cover;
-  background:#f1f5f9;
-  transition: transform .5s ease;
 }
 
 .info {
@@ -322,42 +301,36 @@ onMounted(() => {
   padding:7px 14px;
   border-radius:999px;
   font-weight:700;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
-}
-
-.info h3 {
-  margin:10px 0 6px;
-  font-size:16px;
-  color:#0f172a;
 }
 
 .bio {
   font-size:14px;
   color:#64748b;
   line-height:1.6;
-  text-align: justify;
+  text-align:justify;
 }
 
-/* ================= MOBILE MP FIX ================= */
 
-@media (max-width: 900px) {
+@media (max-width: 640px) {
+
   .mp-card {
     grid-template-columns:1fr;
     padding:20px;
     gap:20px;
+    margin-bottom: 0px;
   }
 
   .mp-photo {
     height:300px;
   }
 
-  .mp-info h3 {
-    font-size:20px;
+  /* animasi dipendekin biar trigger */
+  .member.from-left,
+  .member.from-right,
+  .member.from-bottom {
+    transform: translateY(40px);
   }
 
-  .mp-bio {
-    font-size:14px;
-  }
 }
 
 </style>
