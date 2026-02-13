@@ -249,7 +249,7 @@ const services = [
 
 @media (max-width: 768px) {
   .services {
-    padding: 70px 0 60px;
+    padding: 40px 0 60px;
   }
 
   .head h2 {

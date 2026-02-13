@@ -101,15 +101,15 @@
   .about-divider {
     position: absolute;
     left: 0;
-    bottom: -25px;
+    bottom: 0;               /* nempel ke dasar section */
     width: 100%;
-    height: 100px;
+    height: 150px;
     overflow: hidden;
     line-height: 0;
     z-index: 2;
     pointer-events: none;
   }
-
+  
   .about-divider svg {
     width: 100%;
     height: 100%;
@@ -118,12 +118,12 @@
 
   .about-section {
     position: relative;
-    padding: 70px 0;
+    padding: 80px 0 150px;   /* tambah padding bawah = tinggi divider */
     background: linear-gradient(to bottom, #f8fafc, #eef2f7);
     overflow: hidden;
     scroll-margin-top: 68px;
+    margin-bottom: 0;        /* buang margin bawah */
   }
-
   /* accent line atas */
   .about-section::before {
     content: "";
@@ -304,12 +304,18 @@
 
   /* mobile tweak */
   @media (max-width: 640px) {
+
     .about-section {
-      padding: 70px 0;
+      padding: 70px 0 100px; 
+    }
+
+    .about-divider {
+      height: 100px;
     }
 
     .about-title {
       font-size: 22px;
     }
   }
+
 </style>
