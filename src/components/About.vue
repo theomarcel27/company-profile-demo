@@ -7,19 +7,19 @@
         <div>
           <p class="about-label">About</p>
           <h2 class="about-title">
-            Firma Hukum Strategis untuk Perlindungan & Pertumbuhan Bisnis
+            Strategic Digital Solutions for Business Growth
           </h2>
         </div>
 
         <p class="about-desc">
-          <b>Prosperity Law Firm</b> memberikan layanan hukum strategis dan
-          berorientasi hasil, dengan fokus pada <b>hukum korporasi dan kepailitan</b>.
-          Kami mendampingi perusahaan dan individu dalam menghadapi risiko hukum,
-          restrukturisasi usaha, serta kompleksitas regulasi di Indonesia.
+          <b>Our team</b> delivers reliable and scalable digital solutions,
+          ranging from web development and business systems to custom applications.
+          We help organizations and individuals turn requirements into
+          practical, high-impact technology.
           <br><br>
-          Setiap perkara ditangani oleh tim advokat berpengalaman melalui analisa
-          mendalam, strategi terukur, dan komunikasi yang transparan — sehingga
-          keputusan hukum selaras dengan kepentingan dan tujuan klien.
+          Every project is handled with structured planning, technical precision,
+          and transparent communication — ensuring results that align with
+          client goals and long-term needs.
         </p>
       </div>
 
@@ -30,10 +30,10 @@
             <AcademicCapIcon />
           </div>
           <div>
-            <h3>Keahlian Korporasi & Kepailitan</h3>
+            <h3>Technical Expertise</h3>
             <p>
-              Ditangani oleh advokat berpengalaman di bidang hukum korporasi,
-              restrukturisasi, dan proses kepailitan usaha.
+              Strong experience in building web applications,
+              systems, and business-focused digital platforms.
             </p>
           </div>
         </div>
@@ -43,10 +43,10 @@
             <ChartBarIcon />
           </div>
           <div>
-            <h3>Pendekatan Analitis & Strategis</h3>
+            <h3>Analytical & Structured Approach</h3>
             <p>
-              Setiap perkara disusun berbasis riset, analisa risiko,
-              dan strategi hukum yang terukur.
+              Solutions are designed based on requirements analysis,
+              efficiency, and future scalability.
             </p>
           </div>
         </div>
@@ -56,10 +56,10 @@
             <HandThumbUpIcon />
           </div>
           <div>
-            <h3>Berorientasi pada Kepentingan Klien</h3>
+            <h3>Client-Focused Delivery</h3>
             <p>
-              Komunikasi transparan dan pendekatan personal
-              untuk memastikan tujuan klien menjadi prioritas utama.
+              Clear communication and iterative development
+              to match expectations and business objectives.
             </p>
           </div>
         </div>
@@ -69,10 +69,10 @@
             <ShieldCheckIcon />
           </div>
           <div>
-            <h3>Perlindungan & Solusi Berkelanjutan</h3>
+            <h3>Reliable & Sustainable Solutions</h3>
             <p>
-              Fokus pada perlindungan hukum jangka panjang,
-              bukan sekadar penyelesaian sengketa sesaat.
+              Built with quality, security, and long-term
+              maintainability in mind.
             </p>
           </div>
         </div>

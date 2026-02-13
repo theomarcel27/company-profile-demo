@@ -1,63 +1,65 @@
-<template>
-    <section id="contact" class="contact" ref="teamRef">
-        <footer class="footer">
-            <div class="container footer-top">
-                <div class="footer-left">
-                    <h2>Contact<br>Prosperity Law Firm</h2>
-                    <p class="tag">
-                    Trusted Legal Partner for Corporate, Tax & Litigation Matters
-                    </p>
-                </div>
+<<template>
+  <section id="contact" class="contact" ref="teamRef">
+    <footer class="footer">
 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+      <div class="container footer-top">
 
-                <div class="footer-contact">
-                    <h4>Office</h4>
+        <div class="footer-left">
+          <h2>Contact<br>Professional Portfolio</h2>
+          <p class="tag">
+            Digital & Technology Solutions for Modern Business
+          </p>
+        </div>
 
-                    <p class="addr">
-                    Kompleks Ligamas Indah<br>
-                    Jl. Raya Pasar Minggu, Rukan No. 7C<br>
-                    RT.2/RW.7, Duren Tiga<br>
-                    Kec. Pancoran, Jakarta Selatan 12760
-                    </p>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-                    <div class="contact-list">
-                    <div>📞 (021) xxxx xxxx</div>
-                    <div>📱 +62 8xxx xxxx xxxx</div>
-                    <div>✉ info@prosperitylawfirm.id</div>
-                    </div>
+        <div class="footer-contact">
+          <h4>Office</h4>
 
-                    <!-- SMALL MAP -->
-                    <div class="map">
-                    <iframe
-                        loading="lazy"
-                        allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps?q=Kompleks+Ligamas+Indah+Pancoran&output=embed">
-                    </iframe>
-                    </div>
-                </div>
+          <p class="addr">
+            Demo Business Center<br>
+            Innovation Street No. 123<br>
+            Tech District<br>
+            Metro City 12345
+          </p>
 
-            </div>
+          <div class="contact-list">
+            <div>📞 (000) 123 4567</div>
+            <div>📱 +00 812 0000 0000</div>
+            <div>✉ contact@example-portfolio.com</div>
+          </div>
 
-            <!-- BOTTOM BAR -->
-            <div class="footer-bottom">
-            © 2026 Prosperity Law Firm. All rights reserved.
-            Advocates & Legal Consultants.
-            </div>
+          <div class="map">
+            <iframe
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Business+District&output=embed">
+            </iframe>
+          </div>
 
-        </footer>
-    </section>
+        </div><!-- footer-contact -->
+
+      </div><!-- container -->
+
+      <div class="footer-bottom">
+        © 2026 Professional Portfolio. All rights reserved.
+        Digital & Technology Services.
+      </div>
+
+    </footer>
+  </section>
 </template>
+
 
 <style scoped>
 

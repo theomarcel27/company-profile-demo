@@ -6,8 +6,8 @@
       <div class="logo">
         <span class="logo-bar"></span>
         <div class="logo-text">
-          <span class="logo-top">PROSPERITY</span>
-          <span class="logo-bottom">LAW FIRM</span>
+          <span class="logo-top">Digital</span>
+          <span class="logo-bottom">Solutions</span>
         </div>
       </div>
 

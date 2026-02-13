@@ -7,8 +7,8 @@
     <div class="head">
       <h2>OUR TEAM</h2>
       <p>
-        Tim profesional dengan keahlian multidisiplin dan pengalaman praktis
-        dalam hukum korporasi, perpajakan, dan litigasi.
+        A multidisciplinary professional team with practical experience
+        in corporate, tax, and dispute-related matters.
       </p>
     </div>
 
@@ -61,34 +61,36 @@ import { ref, onMounted, computed } from "vue"
 
 const members = [
   {
-    role: "Managing Partner",
-    name: "Calvin Pratama, S.H., M.Kn.",
+    role: "Technical Director",
+    name: "Alexander Hartono",
     photo: "images/teams/cowo1.jpg",
     pos: "center 30%",
-    bio: "Managing Partner dengan fokus hukum korporasi dan perdata. Memiliki latar belakang Sarjana Hukum dan Magister Kenotariatan serta pengalaman strategis sebagai Head of Legal & Corporate Secretary di grup perusahaan nasional. Berpengalaman dalam strategi hukum korporasi, kepatuhan regulasi, manajemen risiko, dan tata kelola perusahaan."
+    bio: "Technical Director specializing in system architecture and business applications. Experienced in leading digital projects, designing scalable solutions, and aligning technology with business goals."
   },
   {
-    role: "Senior Partner",
-    name: "Theodora Rotua Batubara, S.H., S.E., M.Si",
+    role: "Senior Consultant",
+    name: "Maria Elizabeth",
     photo: "images/teams/cowo2.jpg",
     pos: "center 5%",
-    bio: "Profesional multidisipliner di bidang hukum, akuntansi, dan perpajakan dengan pengalaman lebih dari 15 tahun. Menangani pemeriksaan hingga sengketa pajak tingkat banding. Pemegang sertifikasi Kuasa Hukum Pajak, Konsultan Pajak, Advokat, Mediator, Likuidator, Auditor, dan Kurator."
+    bio: "Senior consultant with multidisciplinary background in systems, finance, and compliance-driven processes. Focused on analysis, audit support, and complex project advisory."
   },
   {
-    role: "Junior Associate",
-    name: "Najla Fernanda Rizanty, S.H.",
+    role: "Software Engineer",
+    name: "Daniel Prakoso",
     photo: "images/teams/cewe1.jpg",
     pos: "center 40%",
-    bio: "Lulusan Sarjana Hukum, telah menyelesaikan PKPA dan UPA serta bersertifikasi Certified Contract Drafter (BNSP). Berpengalaman di litigasi dan non-litigasi, pendampingan korporasi, drafting dan review kontrak serta dokumen hukum perusahaan."
+    bio: "Software engineer focused on application development, feature implementation, and technical documentation. Experienced in both project delivery and system support."
   },
   {
-    role: "Junior Associate",
-    name: "Adrian Ramdani Pardomuan, S.H.",
+    role: "Systems Analyst",
+    name: "Sofia Mahendra",
     photo: "images/teams/cowo3.jpg",
     pos: "center 5%",
-    bio: "Konsultan hukum dengan pengalaman perkara pidana, perdata, dan korporasi. Aktif di bidang non-litigasi termasuk pendirian PT, perizinan usaha, dan HKI. Dikenal dengan pendekatan analitis dan solusi hukum yang praktis serta berorientasi hasil."
+    bio: "Systems analyst experienced in requirements mapping, business process design, and solution planning. Known for structured analysis and practical, result-oriented execution."
   }
 ]
+
+
 
 const managing = members[0]
 const others = computed(() => members.slice(1))

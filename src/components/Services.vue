@@ -6,8 +6,8 @@
       <div class="head">
         <h2>OUR SERVICES</h2>
         <p class="sub">
-          Layanan hukum strategis untuk korporasi dan individu
-          dengan pendekatan terukur dan berorientasi hasil.
+          Professional digital and technology services
+          delivered with structured planning and measurable results.
         </p>
       </div>
 
@@ -37,46 +37,47 @@ import {
 
 const services = [
   {
-    title: "Corporate & Commercial Law",
-    desc: "Pendirian perusahaan, perjanjian komersial, dan kepatuhan regulasi.",
+    title: "Web Application Development",
+    desc: "Custom web apps built for performance, scalability, and usability.",
     icon: BuildingOfficeIcon
   },
   {
-    title: "Dispute Resolution",
-    desc: "Negosiasi, mediasi, arbitrase, dan penyelesaian sengketa.",
+    title: "System & Database Design",
+    desc: "Structured system architecture and efficient database modeling.",
     icon: ScaleIcon
   },
   {
-    title: "Criminal Defence",
-    desc: "Pendampingan perkara pidana individu dan korporasi.",
+    title: "Security & Hardening",
+    desc: "Basic security setup, validation, and risk reduction practices.",
     icon: ShieldExclamationIcon
   },
   {
-    title: "Litigation",
-    desc: "Representasi klien di seluruh tingkat peradilan.",
+    title: "Business Systems",
+    desc: "Internal tools, dashboards, and operational systems.",
     icon: DocumentTextIcon
   },
   {
-    title: "Bankruptcy & PKPU",
-    desc: "Kepailitan dan restrukturisasi utang.",
+    title: "Integration & Automation",
+    desc: "API integration and workflow automation solutions.",
     icon: BanknotesIcon
   },
   {
-    title: "Family Law",
-    desc: "Perceraian dan perkara keluarga.",
+    title: "Team Collaboration Tools",
+    desc: "Multi-user systems with roles and access control.",
     icon: UserGroupIcon
   },
   {
-    title: "Labour Law",
-    desc: "Perjanjian kerja dan sengketa industrial.",
+    title: "Consulting & Technical Review",
+    desc: "Architecture review and technical problem solving.",
     icon: BriefcaseIcon
   },
   {
-    title: "Non-Litigation",
-    desc: "Legal opinion, due diligence, drafting dokumen.",
+    title: "Documentation & Support",
+    desc: "Technical documentation and ongoing support.",
     icon: HandRaisedIcon
   }
 ]
+
 </script>
 
 <style scoped>

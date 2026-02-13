@@ -15,18 +15,18 @@
       <div class="inner">
 
         <h1 class="brand">
-          <span class="brand-top">PROSPERITY</span>
-          <span class="brand-bottom">LAW FIRM</span>
+          <span class="brand-top">DIGITAL</span>
+          <span class="brand-bottom">SOLUTIONS</span>
         </h1>
 
         <p class="tagline">
-          Mitra Hukum Tepercaya<br>
-          untuk Bisnis & Individu
+          Building Reliable Systems<br>
+          and Modern Web Experiences
         </p>
 
         <div class="cta-group">
-          <a href="#contact" class="btn-primary">Consult Now</a>
-          <a href="#about" class="btn-outline">Learn More</a>
+          <a href="#projects" class="btn-primary">See Projects</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
         </div>
 
       </div>
