@@ -70,8 +70,8 @@ const members = [
   {
     role: "Senior Consultant",
     name: "Benedict Crawford",
-    photo: "images/teams/cowo2.jpg",
-    pos: "center 5%",
+    photo: "images/teams/cowo4.jpg",
+    pos: "center 20%",
     bio: "Senior consultant with multidisciplinary background in systems, finance, and compliance-driven processes. Focused on analysis, audit support, and complex project advisory."
   },
   {
