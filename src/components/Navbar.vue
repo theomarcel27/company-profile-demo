@@ -45,7 +45,7 @@
         <nav>
           <a @click="open=false" href="#hero" :class="{active: activeSection==='hero'}">Home</a>
           <a @click="open=false" href="#about" :class="{active: activeSection==='about'}">About</a>
-          <a @click="open=false" href="#services" :class="{active: activeSection==='service'}">Services</a>
+          <a @click="open=false" href="#services" :class="{active: activeSection==='services'}">Services</a>
           <a @click="open=false" href="#team" :class="{active: activeSection==='team'}">Team</a>
           <a @click="open=false" href="#contact" :class="{active: activeSection==='contact'}">Contact</a>
         </nav>
@@ -62,9 +62,9 @@ const open = ref(false)
 const headerRef = ref(null)
 const activeSection = ref("hero")
 
-const sections = ["hero","about","services","team","contact"]
+const sections = ["hero", "about", "services", "team", "contact"]
 
-/* click outside close */
+/* Click outside to close mobile menu */
 const handleClickOutside = (e) => {
   if (!open.value) return
   if (headerRef.value && !headerRef.value.contains(e.target)) {
@@ -72,37 +72,48 @@ const handleClickOutside = (e) => {
   }
 }
 
-/* lock scroll when menu open */
+/* Lock scroll when menu open */
 watch(open, (v) => {
   document.body.style.overflow = v ? "hidden" : ""
 })
 
+/* Logic Scroll Spy yang lebih akurat */
+const handleScroll = () => {
+  const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+  // 1. Cek apakah sudah di paling bawah halaman (Paksa Contact aktif)
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+    activeSection.value = "contact"
+    return
+  }
+
+  // 2. Cek setiap section berdasarkan posisi scroll
+  for (const id of sections) {
+    const el = document.getElementById(id)
+    if (el) {
+      const offsetTop = el.offsetTop
+      const offsetHeight = el.offsetHeight
+
+      if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+        activeSection.value = id
+      }
+    }
+  }
+}
+
 onMounted(() => {
   document.addEventListener("click", handleClickOutside)
-
-  /* 👉 SCROLL SPY OBSERVER */
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        activeSection.value = e.target.id
-      }
-    })
-  },{
-    rootMargin: "-40% 0px -50% 0px",
-    threshold: 0
-  })
-
-  sections.forEach(id => {
-    const el = document.getElementById(id)
-    if (el) obs.observe(el)
-  })
+  window.addEventListener("scroll", handleScroll)
+  
+  // Jalankan sekali saat mount untuk set posisi awal
+  handleScroll()
 })
 
 onUnmounted(() => {
   document.removeEventListener("click", handleClickOutside)
+  window.removeEventListener("scroll", handleScroll)
 })
 </script>
-
 <style scoped>
 /* ================= HEADER ================= */
 

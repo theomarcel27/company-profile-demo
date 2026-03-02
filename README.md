@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # prosperity_law_firm_project
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -42,3 +43,7 @@ npm run build
 ```sh
 npm run lint
 ```
+=======
+# company-profile-demo
+Demo Portofolio Company Profile
+>>>>>>> f94154f0e58e5700c035bdae27457696eeb5f6ea

@@ -62,28 +62,28 @@ import { ref, onMounted, computed } from "vue"
 const members = [
   {
     role: "Technical Director",
-    name: "Alexander Hartono",
+    name: "Alastair Huntington",
     photo: "images/teams/cowo1.jpg",
     pos: "center 30%",
     bio: "Technical Director specializing in system architecture and business applications. Experienced in leading digital projects, designing scalable solutions, and aligning technology with business goals."
   },
   {
     role: "Senior Consultant",
-    name: "Maria Elizabeth",
+    name: "Benedict Crawford",
     photo: "images/teams/cowo2.jpg",
     pos: "center 5%",
     bio: "Senior consultant with multidisciplinary background in systems, finance, and compliance-driven processes. Focused on analysis, audit support, and complex project advisory."
   },
   {
     role: "Software Engineer",
-    name: "Daniel Prakoso",
+    name: "Elizabeth Sterling",
     photo: "images/teams/cewe1.jpg",
     pos: "center 40%",
     bio: "Software engineer focused on application development, feature implementation, and technical documentation. Experienced in both project delivery and system support."
   },
   {
     role: "Systems Analyst",
-    name: "Sofia Mahendra",
+    name: "Harrison Faulkner",
     photo: "images/teams/cowo3.jpg",
     pos: "center 5%",
     bio: "Systems analyst experienced in requirements mapping, business process design, and solution planning. Known for structured analysis and practical, result-oriented execution."

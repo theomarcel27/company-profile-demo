@@ -1,11 +1,19 @@
-<<template>
+<script setup>
+  import { 
+    PhoneIcon, 
+    DevicePhoneMobileIcon, 
+    EnvelopeIcon 
+  } from '@heroicons/vue/24/outline'
+</script>
+
+<template>
   <section id="contact" class="contact" ref="teamRef">
     <footer class="footer">
 
       <div class="container footer-top">
 
         <div class="footer-left">
-          <h2>Contact<br>Professional Portfolio</h2>
+          <h2>Digital<br>Solutions</h2>
           <p class="tag">
             Digital & Technology Solutions for Modern Business
           </p>
@@ -23,19 +31,28 @@
         </div>
 
         <div class="footer-contact">
-          <h4>Office</h4>
-
+          <h4>Headquarters</h4> 
+          
           <p class="addr">
-            Demo Business Center<br>
-            Innovation Street No. 123<br>
-            Tech District<br>
-            Metro City 12345
+            The Chancery Building<br>
+            5 Chancery Lane, Holborn<br>
+            London, WC2A 1LG<br>
+            United Kingdom
           </p>
 
           <div class="contact-list">
-            <div>📞 (000) 123 4567</div>
-            <div>📱 +00 812 0000 0000</div>
-            <div>✉ contact@example-portfolio.com</div>
+            <div class="contact-item">
+              <PhoneIcon class="footer-icon" />
+              <span>+44 20 7946 0123</span>
+            </div>
+            <div class="contact-item">
+              <DevicePhoneMobileIcon class="footer-icon" />
+              <span>+44 7700 900 456</span>
+            </div>
+            <div class="contact-item">
+              <EnvelopeIcon class="footer-icon" />
+              <span>contact@professional-portfolio.uk</span>
+            </div>
           </div>
 
           <div class="map">
@@ -43,7 +60,7 @@
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Business+District&output=embed">
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.905193427438!2d-0.11357602337626358!3d51.5149302718151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b4db1369b77%3A0x673960010c7323b9!2s5%20Chancery%20Ln%2C%20London%20WC2A%201LG%2C%20UK!5e0!3m2!1sen!2sid!4v1709350000000!5m2!1sen!2sid">
             </iframe>
           </div>
 
@@ -192,17 +209,34 @@
   margin-bottom: 16px;
 }
 
-/* ===== CONTACT LIST ===== */
-
-.contact-list {
+/* ===== CONTACT & ICONS ===== */
+.addr {
   font-size: 15px;
-  line-height: 2;
-  color: #e2e8f0;
-  margin-bottom: 18px;
+  line-height: 1.7;
+  color: #cbd5f1;
+  margin-bottom: 16px;
 }
 
-.contact-list div {
-  opacity:.95;
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e2e8f0;
+  font-size: 15px;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  color: #d4af37; /* Gold color to match theme */
+  flex-shrink: 0;
 }
 
 /* ===== MAP ===== */
